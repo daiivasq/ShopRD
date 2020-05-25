@@ -1,27 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ShopRD.Models
+namespace StoreWebApi.Models
 {
-    class Product
+    public class Product
     {
-        private bool isFavourite;
-
-        private string previewImage;
-
-        private List<string> previewImages;
-
-        private int totalQuantity;
-
-        private double actualPrice;
-
-        private double discountPrice;
-
-        private double discountPercent;
-
-        private ObservableCollection<Review> reviews = new ObservableCollection<Review>();
-
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string TypeProduct { get; set; } 
+        public IEnumerable<Size> Sizes { get; set; }
+        public string Description { get; set; }
+        public double Taxes { get; set; }
+        public int Rate { get; set; }
+        public List<Comment> Comments { get; set; }
+        public List<Image> Photo { get; set; }
     }
 }
